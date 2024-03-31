@@ -24,13 +24,20 @@ body.active {
     justify-content: center;
     gap: 3rem;
 }
+h1{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: cornflowerblue;
+}
 
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 20px;
     gap: 5rem;
+    background-color: rgba(239, 202, 158, 0.668);
+    width: 100%;
+    height: 50px;
+    padding: 10px;
 }
 
 .header .title {
@@ -51,4 +58,27 @@ body.active {
     font-weight: bold;
     padding: 8px 16px;
     border-radius: 12px;
+}
+
+.contentCountKey {
+    display: flex;
+    gap: 3rem;
+}
+
+.contentCountKey section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.p-footer {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.text {
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    margin: 10px;
 }
