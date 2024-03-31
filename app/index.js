@@ -64,6 +64,12 @@ function calKey(keyUser) {
     if (currentLetter === keyUser) {
         currentSpan.style.color = 'green'; 
         successKey++;
+
+        if(successKey === currentText.length){
+            setTimeout(()=> {
+                resetTime();
+            },3000)
+        }
     } else {
         currentSpan.style.color = 'red'; 
         incorrretKey++;
@@ -73,8 +79,10 @@ function calKey(keyUser) {
     incorrretKeyE.innerHTML = incorrretKey
 }
 
+let interval;
+
 function calTime() {
-    setInterval(() => {
+    interval = setInterval(() => {
         second++;
         if(second >= 60){
             second = 0;
@@ -88,15 +96,22 @@ function calTime() {
 calTime()
 
 
+function resetTime(){
+    clearInterval(interval)
+    second = 0;
+    minute = 0;
+    timeE.innerHTML = '0:00';
+}
 
-function resetGame(e) {
-    e.preventDefault()
+
+function resetGame() {
     restarText.addEventListener('click', () => {
         currentText = textRandom(); 
         successKey = 0;
         incorrretKey = 0;
         successKeyE.innerHTML = successKey;
-        incorrretKeyE.innerHTML = incorrretKey; 
+        incorrretKeyE.innerHTML = incorrretKey;
+        location.reload()
     })
 }
 
